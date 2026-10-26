@@ -49,3 +49,8 @@ python -m searchengine --help
 ## Roadmap
 
 See [docs/ROADMAP.md](docs/ROADMAP.md).
+
+## References
+
+- Daniel Lindley, *Building A Python-Based Search Engine* (talk):
+  https://www.youtube.com/watch?v=cY7pE7vX6MU

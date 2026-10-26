@@ -8,7 +8,7 @@ Each step is one commit (or a small set of commits) pushed to GitHub.
 | 2  | Tokenizer + stop words                           | `analysis/tokenizer.py`, `analysis/stopwords.py` | done |
 | 3  | Stemming (Porter-style)                          | `analysis/stemmer.py`          | done |
 | 4  | N-grams and edge n-grams (autocomplete)          | `analysis/ngrams.py`           | done |
-| 5  | Inverted index with positions                    | `index/inverted_index.py`      | |
+| 5  | Inverted index with positions                    | `index/inverted_index.py`      | done |
 | 6  | Segments + manifest on disk                      | `index/segments.py`            | |
 | 7  | Query parser (terms, phrases, AND/OR/NOT)        | `query/parser.py`              | |
 | 8  | BM25 scoring + field boosting                    | `scoring/bm25.py`              | |
