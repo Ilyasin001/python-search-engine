@@ -1,0 +1,160 @@
+[
+  {
+    "id": 0,
+    "title": "Why build in-house search",
+    "category": "concepts",
+    "tags": [
+      "architecture",
+      "search"
+    ],
+    "body": "Relying on an external web search engine for application data means parsing messy HTML and wading through ads. Building your own search lets you use your exact data model, denormalize documents for context, and return fast, relevant results."
+  },
+  {
+    "id": 1,
+    "title": "What is a document",
+    "category": "concepts",
+    "tags": [
+      "fundamentals"
+    ],
+    "body": "A document is the core unit of data in a search engine. Unlike a normalized database row, a document is a flat text blob paired with metadata such as titles, tags and attributes."
+  },
+  {
+    "id": 2,
+    "title": "The corpus",
+    "category": "concepts",
+    "tags": [
+      "fundamentals"
+    ],
+    "body": "The corpus is the complete collection of all documents stored in an index. Statistics about the corpus, like how many documents contain a term, drive relevance scoring."
+  },
+  {
+    "id": 3,
+    "title": "Stop words",
+    "category": "text-analysis",
+    "tags": [
+      "analysis",
+      "fundamentals"
+    ],
+    "body": "Stop words are high-frequency, low-meaning filler words such as and, the and but. They are usually filtered out during analysis to save space and reduce noise in results."
+  },
+  {
+    "id": 4,
+    "title": "Stemming words to their roots",
+    "category": "text-analysis",
+    "tags": [
+      "analysis",
+      "linguistics"
+    ],
+    "body": "Stemming reduces words to a root form so that testing, tester and tests all match the term test. Porter and Snowball are popular stemmers for English text."
+  },
+  {
+    "id": 5,
+    "title": "N-grams and edge n-grams",
+    "category": "text-analysis",
+    "tags": [
+      "analysis",
+      "autocomplete"
+    ],
+    "body": "N-grams slide a window across a word to produce small character fragments. Edge n-grams build prefixes from the start of a word, which powers autocomplete and helps with languages where English stemmers fall short."
+  },
+  {
+    "id": 6,
+    "title": "The inverted index",
+    "category": "data-structures",
+    "tags": [
+      "index",
+      "fundamentals"
+    ],
+    "body": "The inverted index is the heart of a search engine. Much like a Python dictionary, it maps each term to the document ids and positions where that term appears, making lookups fast."
+  },
+  {
+    "id": 7,
+    "title": "Index segments",
+    "category": "data-structures",
+    "tags": [
+      "index",
+      "performance"
+    ],
+    "body": "Large indexes are split into smaller immutable segments. New documents are written to fresh segments, and segments are merged in the background, which avoids rewriting terabytes of data on every update."
+  },
+  {
+    "id": 8,
+    "title": "Query parsing",
+    "category": "querying",
+    "tags": [
+      "query",
+      "parsing"
+    ],
+    "body": "A query parser normalizes the raw text a user typed and breaks it into terms, phrases and boolean operators, producing a query tree that the engine can evaluate against the inverted index."
+  },
+  {
+    "id": 9,
+    "title": "Scoring with BM25",
+    "category": "relevance",
+    "tags": [
+      "ranking",
+      "scoring"
+    ],
+    "body": "BM25 scores how well a document matches a query using term frequency, inverse document frequency and document length normalization. Rare terms count for more, and repeated terms saturate."
+  },
+  {
+    "id": 10,
+    "title": "Faceted navigation",
+    "category": "querying",
+    "tags": [
+      "facets",
+      "ecommerce"
+    ],
+    "body": "Faceting lets users drill down into results by category, brand or price, showing an exact count for each value. Online stores like Amazon use facets heavily."
+  },
+  {
+    "id": 11,
+    "title": "Boosting important fields",
+    "category": "relevance",
+    "tags": [
+      "ranking",
+      "boosting"
+    ],
+    "body": "Boosting adjusts scores so that some results rise to the top, for example weighting matches in the title more than matches in the body text."
+  },
+  {
+    "id": 12,
+    "title": "Why SQL LIKE queries are slow",
+    "category": "databases",
+    "tags": [
+      "sql",
+      "performance"
+    ],
+    "body": "A LIKE query with a leading wildcard forces the database to scan every row. Relational databases are built for exact matches and joins, not ranked full-text search."
+  },
+  {
+    "id": 13,
+    "title": "Lucene, Solr and Elasticsearch",
+    "category": "engines",
+    "tags": [
+      "java",
+      "production"
+    ],
+    "body": "Lucene is a highly optimized Java search library. Solr and Elasticsearch wrap Lucene in a server with replication, sharding and a REST API for production workloads."
+  },
+  {
+    "id": 14,
+    "title": "Whoosh: search in pure Python",
+    "category": "engines",
+    "tags": [
+      "python",
+      "library"
+    ],
+    "body": "Whoosh is a fast search library written in pure Python. It is a good fit for small applications and for learning how a search engine works under the hood."
+  },
+  {
+    "id": 15,
+    "title": "Building a Python search engine",
+    "category": "tutorial",
+    "tags": [
+      "python",
+      "tutorial"
+    ],
+    "body": "Writing a small search engine in Python is a great exercise in data structures and input/output handling: tokenize text, build an inverted index, parse queries and rank results with BM25."
+  }
+]

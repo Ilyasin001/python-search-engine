@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "searchengine"
+version = "0.1.0"
+description = "A small, educational search engine written in pure Python."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []  # the engine itself is standard-library only
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+searchengine = "searchengine.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["searchengine*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
