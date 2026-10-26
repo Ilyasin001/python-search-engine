@@ -5,7 +5,7 @@ Each step is one commit (or a small set of commits) pushed to GitHub.
 | Step | Topic | Module | Status |
 |------|-------|--------|--------|
 | 1  | Project scaffold, tech stack, `Document`         | `document.py`, `cli.py`        | done |
-| 2  | Tokenizer + stop words                           | `analysis/tokenizer.py`, `analysis/stopwords.py` | |
+| 2  | Tokenizer + stop words                           | `analysis/tokenizer.py`, `analysis/stopwords.py` | done |
 | 3  | Stemming (Porter-style)                          | `analysis/stemmer.py`          | |
 | 4  | N-grams and edge n-grams (autocomplete)          | `analysis/ngrams.py`           | |
 | 5  | Inverted index with positions                    | `index/inverted_index.py`      | |
