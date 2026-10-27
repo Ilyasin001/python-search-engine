@@ -38,6 +38,12 @@ class InvertedIndex:
             if not self.postings[term]:
                 del self.postings[term]
 
+    def merge(self, other: "InvertedIndex") -> None:
+        """Fold another index (with different doc ids) into this one."""
+        for term, docs in other.postings.items():
+            self.postings.setdefault(term, {}).update(docs)
+        self.lengths.update(other.lengths)
+
     def postings_for(self, term: str) -> dict[int, list[int]]:
         return self.postings.get(term, {})
 
