@@ -13,7 +13,7 @@ Each step is one commit (or a small set of commits) pushed to GitHub.
 | 7  | Query parser (terms, phrases, AND/OR/NOT)        | `query/parser.py`              | done |
 | 8  | BM25 scoring + field boosting                    | `scoring/bm25.py`              | done |
 | 9  | Faceting (category/tag counts)                   | `facets.py`                    | done |
-| 10 | Engine API: index, search, delete                | `engine.py`                    | |
+| 10 | Engine API: index, search, delete                | `engine.py`                    | done |
 | 11 | CLI: `index`, `search`, `suggest` commands       | `cli.py`                       | |
 | 12 | Compare against SQL `LIKE` and Whoosh            | `docs/`                        | |
 
