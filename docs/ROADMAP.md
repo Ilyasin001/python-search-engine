@@ -11,7 +11,7 @@ Each step is one commit (or a small set of commits) pushed to GitHub.
 | 5  | Inverted index with positions                    | `index/inverted_index.py`      | done |
 | 6  | Segments + manifest on disk                      | `index/segments.py`            | done |
 | 7  | Query parser (terms, phrases, AND/OR/NOT)        | `query/parser.py`              | done |
-| 8  | BM25 scoring + field boosting                    | `scoring/bm25.py`              | |
+| 8  | BM25 scoring + field boosting                    | `scoring/bm25.py`              | done |
 | 9  | Faceting (category/tag counts)                   | `facets.py`                    | |
 | 10 | Engine API: index, search, delete                | `engine.py`                    | |
 | 11 | CLI: `index`, `search`, `suggest` commands       | `cli.py`                       | |
