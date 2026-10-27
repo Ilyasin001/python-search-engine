@@ -46,6 +46,36 @@ pytest
 python -m searchengine --help
 ```
 
+## Usage
+
+```bash
+# build the index (in ./index) from the sample corpus
+python -m searchengine index data/sample_docs.json --fresh
+
+# search: terms, "phrases", AND / OR / NOT (or -word), (grouping), field:term
+python -m searchengine search "inverted index"
+python -m searchengine search "\"inverted index\" OR stemming -lucene"
+python -m searchengine search "title:segments"
+
+# drill down with facet filters; an empty query browses everything
+python -m searchengine search "" --filter category=text-analysis
+
+# autocomplete the last word
+python -m searchengine suggest "inverted ind"
+```
+
+From Python:
+
+```python
+from searchengine.engine import Engine
+
+with Engine("index", boosts={"title": 2.0}, facet_fields=["category", "tags"]) as engine:
+    engine.index({"title": "Stop words", "body": "Filler words like and, the, but", "category": "analysis"})
+    results = engine.search("stop words")
+    for hit in results.hits:
+        print(hit.score, hit.doc.fields["title"])
+```
+
 ## Roadmap
 
 See [docs/ROADMAP.md](docs/ROADMAP.md).

@@ -4,7 +4,7 @@ Each step is one commit (or a small set of commits) pushed to GitHub.
 
 | Step | Topic | Module | Status |
 |------|-------|--------|--------|
-| 1  | Project scaffold, tech stack, `Document`         | `document.py`, `cli.py`        | done |
+| 1  | Project scaffold, tech stack, `Document`         | `document.py`                  | done |
 | 2  | Tokenizer + stop words                           | `analysis/tokenizer.py`, `analysis/stopwords.py` | done |
 | 3  | Stemming (Porter-style)                          | `analysis/stemmer.py`          | done |
 | 4  | N-grams and edge n-grams (autocomplete)          | `analysis/ngrams.py`           | done |
@@ -14,7 +14,7 @@ Each step is one commit (or a small set of commits) pushed to GitHub.
 | 8  | BM25 scoring + field boosting                    | `scoring/bm25.py`              | done |
 | 9  | Faceting (category/tag counts)                   | `facets.py`                    | done |
 | 10 | Engine API: index, search, delete                | `engine.py`                    | done |
-| 11 | CLI: `index`, `search`, `suggest` commands       | `cli.py`                       | |
+| 11 | CLI: `index`, `search`, `suggest` commands       | `cli.py`, `suggest.py`         | done |
 | 12 | Compare against SQL `LIKE` and Whoosh            | `docs/`                        | |
 
 ## Glossary

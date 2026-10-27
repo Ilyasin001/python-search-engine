@@ -26,6 +26,7 @@ from searchengine.index.inverted_index import InvertedIndex
 from searchengine.index.segments import Manifest, Segment, SegmentStore
 from searchengine.query.parser import Not, Or, Phrase, Query, Term, parse
 from searchengine.scoring.bm25 import BM25, query_terms, top_k
+from searchengine.suggest import Suggester
 
 
 @dataclass
@@ -101,6 +102,12 @@ class Engine:
     @property
     def doc_count(self) -> int:
         return self.store.doc_count
+
+    def suggest(self, typed: str, limit: int = 5) -> list[str]:
+        """Autocomplete the last word of `typed` from words in the indexed fields."""
+        suggester = Suggester()
+        suggester.add_all(doc.text(name) for doc in self.store.documents() for name in self.manifest.fields)
+        return suggester.suggest(typed, limit)
 
     def search(
         self,

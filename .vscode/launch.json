@@ -2,12 +2,32 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "searchengine CLI",
+      "name": "Build index from sample docs",
       "type": "debugpy",
       "request": "launch",
       "module": "searchengine",
-      "args": ["--help"],
+      "args": ["index", "data/sample_docs.json", "--fresh"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Search",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "searchengine",
+      "args": ["search", "${input:query}"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Suggest",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "searchengine",
+      "args": ["suggest", "${input:prefix}"],
       "console": "integratedTerminal"
     }
+  ],
+  "inputs": [
+    { "id": "query", "type": "promptString", "description": "Search query", "default": "inverted index" },
+    { "id": "prefix", "type": "promptString", "description": "Text to autocomplete", "default": "inv" }
   ]
 }
