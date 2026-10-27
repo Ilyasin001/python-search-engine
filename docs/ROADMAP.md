@@ -15,7 +15,7 @@ Each step is one commit (or a small set of commits) pushed to GitHub.
 | 9  | Faceting (category/tag counts)                   | `facets.py`                    | done |
 | 10 | Engine API: index, search, delete                | `engine.py`                    | done |
 | 11 | CLI: `index`, `search`, `suggest` commands       | `cli.py`, `suggest.py`         | done |
-| 12 | Compare against SQL `LIKE` and Whoosh            | `docs/`                        | |
+| 12 | Compare against SQL `LIKE`, FTS5 and Whoosh      | `benchmarks/compare.py`, `docs/COMPARISON.md` | done |
 
 ## Glossary
 

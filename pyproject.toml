@@ -12,6 +12,7 @@ dependencies = []  # the engine itself is standard-library only
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.6"]
+compare = ["whoosh-reloaded>=2.7"]  # only for benchmarks/compare.py
 
 [project.scripts]
 searchengine = "searchengine.cli:main"

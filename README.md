@@ -29,11 +29,14 @@ searchengine/            the engine package
   query/                 query parser
   scoring/               BM25 + boosting
   facets.py              facet counts
+  suggest.py             autocomplete via edge n-grams
   engine.py              ties it all together
   cli.py                 command-line interface
+benchmarks/compare.py    vs SQL LIKE, SQLite FTS5 and Whoosh
 tests/                   pytest suite
 data/sample_docs.json    sample corpus (16 docs about search concepts)
 docs/ROADMAP.md          the step-by-step build plan
+docs/COMPARISON.md       benchmark results and what they show
 ```
 
 ## Setup
@@ -74,6 +77,18 @@ with Engine("index", boosts={"title": 2.0}, facet_fields=["category", "tags"]) a
     results = engine.search("stop words")
     for hit in results.hits:
         print(hit.score, hit.doc.fields["title"])
+```
+
+## How it compares
+
+[docs/COMPARISON.md](docs/COMPARISON.md) benchmarks this engine against SQL `LIKE`,
+SQLite FTS5 and Whoosh, covering result quality on the sample corpus and speed on 10k documents.
+`LIKE` misses word variants, matches inside other words and can't rank. An inverted index
+does work in proportion to the matches rather than the corpus size.
+
+```bash
+pip install -e ".[compare]"
+python -m benchmarks.compare
 ```
 
 ## Roadmap
